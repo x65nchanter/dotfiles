@@ -1,0 +1,120 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "which_key": {
+    "enabled": true,
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000,
+    },
+  },
+  "features": {
+    "edit_prediction_provider": "zed",
+  },
+  "language_models": {
+    "openai_compatible": {
+      "ollama-openapi": {
+        "api_url": "http://localhost:11434/v1",
+        "available_models": [
+          {
+            "name": "glm-flash-4.7",
+            "max_tokens": 16384,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+            },
+          },
+        ],
+      },
+    },
+  },
+  "agent": {
+    "default_profile": "write",
+    "use_modifier_to_send": true,
+    "play_sound_when_agent_done": true,
+    "inline_assistant_model": {
+      "provider": "lmstudio",
+      "model": "qwen3-coder-30b-a3b",
+    },
+    "always_allow_tool_actions": true,
+    "profiles": {
+      "write": {
+        "name": "Write",
+        "tools": {
+          "copy_path": true,
+          "create_directory": true,
+          "delete_path": true,
+          "diagnostics": true,
+          "edit_file": true,
+          "fetch": true,
+          "list_directory": true,
+          "project_notifications": false,
+          "move_path": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "restore_file_from_disk": true,
+          "save_file": true,
+          "open": true,
+          "grep": true,
+          "terminal": true,
+          "thinking": true,
+          "web_search": true,
+        },
+        "enable_all_context_servers": true,
+        "context_servers": {
+          "mcp-server-context7": {
+            "tools": {
+              "query-docs": true,
+            },
+          },
+        },
+      },
+    },
+    "default_model": {
+      "provider": "lmstudio",
+      "model": "zai-org/glm-4.7-flash",
+    },
+    "favorite_models": [
+      {
+        "provider": "lmstudio",
+        "model": "qwen3-coder-30b-a3b-instruct",
+      },
+    ],
+    "model_parameters": [],
+  },
+  "context_servers": {},
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+  "base_keymap": "JetBrains",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "terminal": {
+    "shell": {
+      "program": "pwsh.exe",
+    },
+    "font_family": "JetBrainsMono Nerd Font",
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+}

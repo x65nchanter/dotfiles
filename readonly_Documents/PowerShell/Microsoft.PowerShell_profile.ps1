@@ -8,3 +8,4 @@
 . "$HOME\.config\powershell\aliases\ascii.ps1"
 . "$HOME\.config\powershell\enviroment.ps1"
 . "$HOME\.config\powershell\modules\oh-my-posh.ps1"
+. "$HOME\.config\powershell\modules\gsudoModule.ps1"

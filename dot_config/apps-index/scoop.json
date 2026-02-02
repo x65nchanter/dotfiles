@@ -1,0 +1,207 @@
+{
+    "apps": [
+        {
+            "Info": "",
+            "Updated": "2026-02-02T10:30:26.0190954+03:00",
+            "Source": "main",
+            "Version": "25.01",
+            "Name": "7zip"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-02-02T10:55:27.3655351+03:00",
+            "Source": "extras",
+            "Version": "3.7.7",
+            "Name": "audacity"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-01-20T23:13:20.063888+03:00",
+            "Source": "extras",
+            "Version": "2.0.19",
+            "Name": "autohotkey"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-02-02T11:26:38.4235419+03:00",
+            "Source": "extras",
+            "Version": "5.0.1",
+            "Name": "blender"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-01-24T13:21:03.2567928+03:00",
+            "Source": "main",
+            "Version": "2.69.3",
+            "Name": "chezmoi"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-01-24T15:09:18.8017149+03:00",
+            "Source": "main",
+            "Version": "0.23.4",
+            "Name": "eza"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-02-02T10:58:24.7319034+03:00",
+            "Source": "main",
+            "Version": "10.06.0",
+            "Name": "ghostscript"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-01-26T14:21:33.4938606+03:00",
+            "Source": "main",
+            "Version": "2.52.0",
+            "Name": "git"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-02-02T11:16:47.7850078+03:00",
+            "Source": "main",
+            "Version": "2.6.1",
+            "Name": "gsudo"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-02-02T10:57:47.4257249+03:00",
+            "Source": "main",
+            "Version": "7.1.2-13",
+            "Name": "imagemagick"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-02-02T10:39:50.5017762+03:00",
+            "Source": "main",
+            "Version": "2.67.3",
+            "Name": "innounp"
+        },
+        {
+            "Info": "",
+            "Updated": "2025-10-22T18:43:35.5336334+03:00",
+            "Source": "extras",
+            "Version": "2.7.10",
+            "Name": "keepassxc"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-02-02T11:02:42.3708028+03:00",
+            "Source": "extras",
+            "Version": "5.2.15",
+            "Name": "krita"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-01-24T19:02:08.3808503+03:00",
+            "Source": "extras",
+            "Version": "0.58.1",
+            "Name": "lazygit"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-02-02T11:00:50.8149877+03:00",
+            "Source": "main",
+            "Version": "1.1.48",
+            "Name": "opencode"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-01-21T06:53:04.1412237+03:00",
+            "Source": "extras",
+            "Version": "1.1.28",
+            "Name": "opencode-desktop"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-02-02T11:10:08.768805+03:00",
+            "Source": "extras",
+            "Version": "5.1.11",
+            "Name": "paint.net"
+        },
+        {
+            "Info": "",
+            "Updated": "2025-10-22T18:34:39.3855968+03:00",
+            "Source": "extras",
+            "Version": "0.83",
+            "Name": "putty"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-01-23T18:42:10.5164729+03:00",
+            "Source": "main",
+            "Version": "3.14.2",
+            "Name": "python"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-02-02T12:12:39.6015508+03:00",
+            "Source": "main",
+            "Version": "1.28.2",
+            "Name": "rustup"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-02-02T11:12:59.7700706+03:00",
+            "Source": "extras",
+            "Version": "1.9.8",
+            "Name": "snaketail"
+        },
+        {
+            "Info": "",
+            "Updated": "2023-12-24T23:37:30.7811544+03:00",
+            "Source": "main",
+            "Version": "0.2020.01.26",
+            "Name": "sudo"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-02-02T11:06:29.5314662+03:00",
+            "Source": "extras",
+            "Version": "3.0.23",
+            "Name": "vlc"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-01-20T22:24:14.275246+03:00",
+            "Source": "extras",
+            "Version": "20240203-110809-5046fc22",
+            "Name": "wezterm"
+        },
+        {
+            "Info": "",
+            "Updated": "2025-10-22T18:39:26.6063648+03:00",
+            "Source": "extras",
+            "Version": "6.5.4",
+            "Name": "winscp"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-01-21T11:19:07.1131222+03:00",
+            "Source": "extras",
+            "Version": "2.41.6",
+            "Name": "winsshterm"
+        },
+        {
+            "Info": "",
+            "Updated": "2026-02-02T10:40:13.0281758+03:00",
+            "Source": "extras",
+            "Version": "0.221.5",
+            "Name": "zed"
+        }
+    ],
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": "2026-02-02T06:15:59+03:00",
+            "Manifests": 1425
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2026-02-02T08:00:16+03:00",
+            "Manifests": 2257
+        }
+    ]
+}

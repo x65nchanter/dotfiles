@@ -1,0 +1,4 @@
+# {{ if eq .chezmoi.os "windows" -}}
+Write-Host "--- Запуск автоматического восстановления приложений ---" -ForegroundColor Cyan
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$HOME\.config\apps-index\Restore-Apps.ps1"
+# {{ end -}}
