@@ -30,25 +30,5 @@
   },
   "default_agent": "plan",
   "enabled_providers": ["lmstudio"],
-  "model": "zai-org/glm-4.7-flash",
-  "agent": {
-    "build": {
-      "mode": "primary",
-      "prompt": "{file:~/Prompts/terminal-sentinel.txt}",
-      "tools": {
-        "write": true,
-        "edit": true,
-        "bash": true
-      }
-    },
-    "plan": {
-      "mode": "primary",
-      "prompt": "{file:~/Prompts/terminal-sentinel.txt}",
-      "tools": {
-        "write": false,
-        "edit": false,
-        "bash": false
-      }
-    }
-  }
+  "model": "zai-org/glm-4.7-flash"
 }
