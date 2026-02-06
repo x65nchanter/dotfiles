@@ -1,0 +1,123 @@
+{
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main.git",
+            "Updated": "2026-01-26T11:31:15+03:00",
+            "Manifests": 1422
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2026-01-26T12:17:36+03:00",
+            "Manifests": 2257
+        }
+    ],
+    "apps": [
+        {
+            "Name": "7zip",
+            "Source": "main",
+            "Updated": "2023-12-25T00:18:20.5777561+03:00",
+            "Info": "",
+            "Version": "23.01"
+        },
+        {
+            "Name": "autohotkey",
+            "Source": "extras",
+            "Updated": "2026-01-20T23:13:20.063888+03:00",
+            "Info": "",
+            "Version": "2.0.19"
+        },
+        {
+            "Name": "chezmoi",
+            "Source": "main",
+            "Updated": "2026-01-24T13:21:03.2567928+03:00",
+            "Info": "",
+            "Version": "2.69.3"
+        },
+        {
+            "Name": "eza",
+            "Source": "main",
+            "Updated": "2026-01-24T15:09:18.8017149+03:00",
+            "Info": "",
+            "Version": "0.23.4"
+        },
+        {
+            "Name": "git",
+            "Source": "main",
+            "Updated": "2026-01-26T14:21:33.4938606+03:00",
+            "Info": "",
+            "Version": "2.52.0"
+        },
+        {
+            "Name": "keepassxc",
+            "Source": "extras",
+            "Updated": "2025-10-22T18:43:35.5336334+03:00",
+            "Info": "",
+            "Version": "2.7.10"
+        },
+        {
+            "Name": "lazygit",
+            "Source": "extras",
+            "Updated": "2026-01-24T19:02:08.3808503+03:00",
+            "Info": "",
+            "Version": "0.58.1"
+        },
+        {
+            "Name": "opencode",
+            "Source": "C:\\Users\\local\\scoop\\buckets\\main\\bucket\\opencode.json",
+            "Updated": "2026-01-26T13:08:21.2344465+03:00",
+            "Info": "",
+            "Version": "1.1.36"
+        },
+        {
+            "Name": "opencode-desktop",
+            "Source": "extras",
+            "Updated": "2026-01-21T06:53:04.1412237+03:00",
+            "Info": "",
+            "Version": "1.1.28"
+        },
+        {
+            "Name": "putty",
+            "Source": "extras",
+            "Updated": "2025-10-22T18:34:39.3855968+03:00",
+            "Info": "",
+            "Version": "0.83"
+        },
+        {
+            "Name": "python",
+            "Source": "main",
+            "Updated": "2026-01-23T18:42:10.5164729+03:00",
+            "Info": "",
+            "Version": "3.14.2"
+        },
+        {
+            "Name": "sudo",
+            "Source": "main",
+            "Updated": "2023-12-24T23:37:30.7811544+03:00",
+            "Info": "",
+            "Version": "0.2020.01.26"
+        },
+        {
+            "Name": "wezterm",
+            "Source": "extras",
+            "Updated": "2026-01-20T22:24:14.275246+03:00",
+            "Info": "",
+            "Version": "20240203-110809-5046fc22"
+        },
+        {
+            "Name": "winscp",
+            "Source": "extras",
+            "Updated": "2025-10-22T18:39:26.6063648+03:00",
+            "Info": "",
+            "Version": "6.5.4"
+        },
+        {
+            "Name": "winsshterm",
+            "Source": "extras",
+            "Updated": "2026-01-21T11:19:07.1131222+03:00",
+            "Info": "",
+            "Version": "2.41.6"
+        }
+    ]
+}

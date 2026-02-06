@@ -1,0 +1,8 @@
+# Игнорируем всё внутри opencode, что весит много
+.config/opencode/node_modules/**
+.config/opencode/dist/**
+.config/opencode/.git/**
+# Если хочешь исключить кэш или логи:
+.config/opencode/*.log
+.config/chezmoi
+.env

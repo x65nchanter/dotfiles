@@ -40,3 +40,22 @@
 - `powershell/` — алиасы и автодополнение.
 - `wezterm/` — конфигурация терминала.
 - `zed/` — настройки редактора.
+
+## 🔐 Настройка секретов (Windows)
+
+Этот конфиг использует **chezmoi templates** и системный **Windows Credential Manager**. 
+Перед выполнением `chezmoi apply` необходимо прописать токены в хранилище Windows, иначе шаблоны не соберутся.
+
+### 1. Добавление ключей в хранилище
+Выполни эти команды в **PowerShell** по очереди. После каждой команды вставляй соответствующий токен в появившееся поле `Value`:
+
+```powershell
+# GitHub Personal Access Token
+chezmoi secret keyring set --service="opencode" --user="github"
+
+# Context7 API Key
+chezmoi secret keyring set --service="opencode" --user="context7"
+
+# Tavily Search API Key
+chezmoi secret keyring set --service="opencode" --user="tavily"
+```

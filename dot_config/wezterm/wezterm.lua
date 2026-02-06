@@ -12,6 +12,12 @@ end
 
 -- === DEFAULT SHELL SETTING ===
 config.default_prog = { "pwsh.exe", "-NoLogo" }
+config.term = "wezterm"
+config.set_environment_variables = {
+    ["LANG"] = "ru_RU.UTF-8",
+    -- Если LANG уже установлен в системе, можно попробовать LC_ALL
+    ["LC_ALL"] = "ru_RU.UTF-8",
+}
 
 
 -- === ШРИФТ И ЛИГАТУРЫ ===
@@ -35,20 +41,6 @@ config.colors = {
     }
 }
 
--- === ФУНКЦИЯ ОПРЕДЕЛЕНИЯ GPU ===
-local function get_gpu_name()
-    local gpus = wezterm.gui.enumerate_gpus()
-    if gpus and #gpus > 0 then
-        for _, gpu in ipairs(gpus) do
-            if gpu.backend == 'Vulkan' or gpu.backend == 'Dx12' then
-                return gpu.name:gsub(" %(.*%)", "")
-            end
-        end
-    end
-    return "Unknown GPU"
-end
-local my_gpu = get_gpu_name()
-
 -- === ФУНКЦИЯ ОПРЕДЕЛЕНИЯ GIT ВЕТКИ ===
 local function get_git_branch(pane)
     local cwd = pane:get_current_working_dir()
@@ -68,25 +60,57 @@ local function get_git_branch(pane)
     return ""
 end
 
--- === СТАТУС-БАР С ИКОНКАМИ ===
+-- === ФУНКЦИЯ ОПРЕДЕЛЕНИЯ GPU (ДИНАМИЧЕСКАЯ) ===
+local function get_gpu_info()
+    -- Добавляем memory.used и memory.total для расчета % VRAM
+    local success, stdout, stderr = wezterm.run_child_process({
+        'nvidia-smi', '--query-gpu=gpu_name,utilization.gpu,temperature.gpu,memory.used,memory.total',
+        '--format=csv,noheader,nounits'
+    })
+
+    if success then
+        local name, load, temp, mem_used, mem_total = stdout:match("([^,]+),%s*([^,]+),%s*([^,]+),%s*([^,]+),%s*([^,]+)")
+        if name then
+            local clean_name = name:gsub("NVIDIA ", ""):gsub(" GeForce", ""):gsub(" RTX", ""):gsub(" Series", ""):gsub(
+            "^%s*(.-)%s*$", "%1")
+
+            -- Считаем процент VRAM
+            local vram_pct = (tonumber(mem_used) / tonumber(mem_total)) * 100
+
+            return {
+                name = clean_name,
+                load = load:gsub("^%s*(.-)%s*$", "%1"),
+                temp = temp:gsub("^%s*(.-)%s*$", "%1"),
+                vram = string.format("%.0f", vram_pct)
+            }
+        end
+    end
+    return nil
+end
+
+-- === СТАТУС-БАР ===
 wezterm.on('update-status', function(window, pane)
     local date = wezterm.strftime('%H:%M:%S')
     local user = os.getenv("USERNAME") or "Engineer"
     local git = get_git_branch(pane)
     local active_tab = window:active_tab()
 
-    -- Проверка: если текущий таб — это AI, добавляем иконку замочка
+    local gpu = get_gpu_info()
+    local gpu_text = gpu and (gpu.name .. " " .. gpu.load .. "% " .. gpu.temp .. "°C") or "GPU Offline"
+    local vram_text = gpu and (gpu.vram .. "%") or "0%"
+
     local lock_icon = ""
     if wezterm.GLOBAL.ai_tab_id and active_tab:tab_id() == wezterm.GLOBAL.ai_tab_id then
-        lock_icon = "  " -- nf-fa-lock
+        lock_icon = "  "
     end
 
     window:set_right_status(wezterm.format({
         { Foreground = { Color = '#a9b7c6' } }, { Text = lock_icon .. '   ' .. user .. ' ' },
         { Foreground = { Color = '#629755' } }, { Text = git },
-        { Foreground = { Color = '#cc7832' } }, { Text = '   ' .. my_gpu .. ' ' }, -- nf-md-memory
-        { Foreground = { Color = '#9876aa' } }, { Text = '   ' .. string.format("%.0f", collectgarbage("count") / 1024) .. 'MB ' }, -- nf-md-chip
-        { Foreground = { Color = '#ffc66d' } }, { Text = '   ' .. date .. ' ' }, -- nf-md-clock
+        { Foreground = { Color = '#cc7832' } }, { Text = '   ' .. gpu_text .. ' ' },
+        -- Секция VRAM с процентами из nvidia-smi
+        { Foreground = { Color = '#9876aa' } }, { Text = '   ' .. vram_text .. ' ' },
+        { Foreground = { Color = '#ffc66d' } }, { Text = '   ' .. date .. ' ' },
     }))
 end)
 
